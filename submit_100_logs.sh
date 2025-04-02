@@ -4,13 +4,20 @@
 
 #requires $DD_API_KEY
 
-#if [ -z ${DD_API_KEY} ]
-#then
-#	printf "\$DD_API_KEY required"
-#	exit 1
-#fi
+# Check for shuf
+if ! command -v shuf &> /dev/null; then
+    echo "Error: 'shuf' is required but not found."
+    echo "Please install it. On macOS, use: brew install coreutils"
+    exit 1
+fi
 
-for i in {1..300}
+if [ -z ${DD_API_KEY} ]
+then
+	printf "\$DD_API_KEY required"
+	exit 1
+fi
+
+for i in {1..10}
 do
 	date=$(date -R);
 	random_num=$(( $RANDOM % 100 ));
