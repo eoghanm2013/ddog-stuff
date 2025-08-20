@@ -8,7 +8,8 @@ if ! command -v shuf &> /dev/null; then
     echo "Please install it. On macOS, use: brew install coreutils"
     exit 1
 fi
-
+#Testing Code Security
+API_KEY="123456789"
 if [ -z "${DD_API_KEY}" ]; then
     printf "\$DD_API_KEY required\n"
     exit 1
