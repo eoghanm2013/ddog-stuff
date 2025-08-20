@@ -28,7 +28,7 @@ ips=(
     "233.58.94.254"
 )
 
-for i in {1..50}
+for i in {1..51}
 do
     date=$(date -R)
     random_num1=$(( RANDOM % 100 ))
